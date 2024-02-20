@@ -1,0 +1,5 @@
+# Ignore build directories and executables
+*/build
+*/*.out
+/cpp_book
+/.vscode
