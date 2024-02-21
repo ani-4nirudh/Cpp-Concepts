@@ -3,7 +3,7 @@
 
 class Student
 {
-    private:
+    protected:
         std::string Name;
         int Roll_Number;
 

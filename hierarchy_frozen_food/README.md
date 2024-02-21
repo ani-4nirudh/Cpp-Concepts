@@ -1,0 +1,11 @@
+# Description
+- In this program, hierarchy between the parent `FrozenFood` and child classes `FrozenPizza` & `DeepDishPizza`. The last two have a parent-child relationship as well.
+- As the derived classes are derived under `public`, the objects instances for derived classes have access to the members of parent class i.e. `FrozenFood`. This property of being able to **inherit** the properties of base class is called **inheritance**.
+- **Overriding:** One can provide different versions of the same function. For example, `ThawTime()` can be different for different frozen foods, and we can provide a specific version to each of the classes in the hierarchy. Overriding can be performed by putting the keyword `virtual` before the function (to be overridden) **inside the base class**. 
+  - :bulb: It is also good practice to write `virtual` before the overridden function inside the derived classes, as it lets the readers know that this is a **virtual function**.
+- **Polymorphism:** As each class will have its own version of `ThawTime()`, the computer knows which version of the function to call depending on the type of object. That object could be `FrozenFood`, `FrozenPizza` or `DeepDishPizza`. This whole process is called polymorphism. As a result of this, the rest of the application already understands the new class that is created and little to no changes are required. 
+- **Abstract Virtual Function:** 
+  - When one creates a base class with a virtual function, and then derive other classes from it. We may want to override the virtual functions. Furthermore, you might want to make sure that nobody ever creates instance of base class. 
+  - Syntax: `virtual ThawTime() = 0;` This `= 0` creates a virtual abstract function.
+  - Now if somebody tries to create an instance of FrozenFood class, compiler produces the error: `error: cannot declare variable ‘Nuggets’ to be of abstract type ‘FrozenFood’ & note:   because the following virtual functions are pure within ‘FrozenFood’:`
+  - :bulb: But there is **one more caveat** to this. **Once a class has been declares as abstract, the derived classes are abstract too.** Now one **has to** override the abstract virtual functions. That is the **only way to create instances of the derived classes.**
