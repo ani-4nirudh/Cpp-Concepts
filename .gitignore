@@ -1,5 +1,6 @@
 # Ignore build directories and executables
 */build
 */*.out
+/classes_classes_classes/polymorphism/a.out
 /cpp_book
 /.vscode
